@@ -1,5 +1,6 @@
 const path = require("path");
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -23,6 +24,10 @@ module.exports = {
     plugins: [
       new MiniCssExtractPlugin({
         filename: '[name]_[contenthash:8].css'
+      }),
+      new OptimizeCssAssetsWebpackPlugin({
+        assetNameRegExp: /\.css$/g,
+        cssProcessor: require('cssnano'),
       })
     ]
   }
