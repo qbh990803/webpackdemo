@@ -30,6 +30,13 @@ module.exports = {
                 require('autoprefixer')({overrideBrowserslist: ['> 0.15% in CN']})
               ]
             }
+          },
+          {
+            loader: 'px2rem-loader',
+            options: {
+              remUnit: 75,
+              remPrecesion: 8,
+            }
           }
         ],
       },
